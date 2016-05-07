@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "ShoppingCartViewController.h"
 @interface ViewController ()
 
 @end
@@ -16,12 +16,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 50, 100, 40)];
+    button.backgroundColor = [UIColor orangeColor];
+    [button addTarget:self action:@selector(button) forControlEvents:UIControlEventTouchDown];
+    [self.view addSubview:button];
+}
+
+-(void)button{
+
+
+    ShoppingCartViewController *shoppingcart = [[ShoppingCartViewController alloc] init];
+    UINavigationController *hom1Navi = [[UINavigationController alloc]initWithRootViewController:shoppingcart];
+    [self presentViewController:hom1Navi animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+   
 }
 
 @end
